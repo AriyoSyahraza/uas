@@ -1,0 +1,48 @@
+MariaDB [task_manager]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| blog_pwl           |
+| information_schema |
+| laravel            |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| task_manager       |
+| test_pwl           |
++--------------------+
+8 rows in set (0.019 sec)MariaDB [task_manager]> SELECT a.id, a.task_name, b.task_status, b.task_comments, d.category_name as 'Category',DATEDIFF(a.task_duration_end, a.ask_duration_start) as 'Lama Pengerjaan',c.name as 'Create By', (SELECT name from users where c.id =b.user_id ) as 'Verified By'
+    -> FROM task_plans a
+    -> LEFT JOIN task_dailies b ON a.id = b.plan_id
+    -> INNER JOIN users c ON a.user_create = c.id
+    -> RIGHT JOIN task_categories d ON a.category_id = d.id;
++--------------------------------------+-----------------------------------------+-------------+---------------+--------------+-----------------+-----------+-------------+
+| id                                   | task_name                               | task_status | task_comments | Category     | Lama Pengerjaan | Create By | Verified By |
++--------------------------------------+-----------------------------------------+-------------+---------------+--------------+-----------------+-----------+-------------+
+| f1ee037b-9135-41d2-9757-091391df4fb8 | Mendokumentasikan Code                  | NULL        | NULL          | Analisis     |               0 | User A    | NULL        |
+| 924eaa0e-c8f1-4132-a032-1d98c176a8c3 | Membuat Modul add_to_cart pada Aplikasi | NULL        | NULL          | Administrasi |              20 | User A    | NULL        |
+| c96fdbd6-a3a4-42e3-b437-444ffd734a36 | Menganalisa Data Kemahasiswaan          | NULL        | NULL          | Teknikal     |               7 | User A    | NULL        |
++--------------------------------------+-----------------------------------------+-------------+---------------+--------------+-----------------+-----------+-------------+
+3 rows in set (0.060 sec)
+
+MariaDB [(none)]> USE task_manager
+Database changed
+
+MariaDB [task_manager]> select * from ariyo211402055;
++--------------------------------------+-----------------------------------------+--------------------+-------------------+--------------------------------------+--------------------------------------+--------------------------------------+---------------+-------------+------------+------------+
+| id                                   | task_name                               | ask_duration_start | task_duration_end | user_create                          | category_id                          | indicators_id                        | task_priority | task_status | created_at | updated_at |
++--------------------------------------+-----------------------------------------+--------------------+-------------------+--------------------------------------+--------------------------------------+--------------------------------------+---------------+-------------+------------+------------+
+| 924eaa0e-c8f1-4132-a032-1d98c176a8c3 | Membuat Modul add_to_cart pada Aplikasi | 2022-06-10         | 2022-06-30        | 72233152-7af0-4e89-94fc-d8d02e73aba8 | 72233152-7af0-4e89-94fc-d8d02e73aba8 | 5e72be09-384e-4097-8e78-c20e84d88112 |             1 | Pending     | NULL       | NULL       |
+| c96fdbd6-a3a4-42e3-b437-444ffd734a36 | Menganalisa Data Kemahasiswaan          | 2022-06-10         | 2022-06-17        | 72233152-7af0-4e89-94fc-d8d02e73aba8 | e46f9318-ca1a-4a3d-a998-913c8fdf5917 | 669c981f-1bd6-47d5-b2ce-de568aaa160a |             2 | Process     | NULL       | NULL       |
+| f1ee037b-9135-41d2-9757-091391df4fb8 | Mendokumentasikan Code                  | 2022-06-10         | 2022-06-10        | 72233152-7af0-4e89-94fc-d8d02e73aba8 | 229d48a0-a643-42c2-832f-882297db9003 | 5e72be09-384e-4097-8e78-c20e84d88112 |             3 | Process     | NULL       | NULL       |
++--------------------------------------+-----------------------------------------+--------------------+-------------------+--------------------------------------+--------------------------------------+--------------------------------------+---------------+-------------+------------+------------+
+3 rows in set (0.001 sec)
+
+
+MariaDB [task_manager]> NOTEE
+
+
+// Maaf Sebelumnya Bu, fungsi tee saya gak jalan, dan file nya juga gak ditemukan. jadi tadi pas pengerjaan gak sempat paste di elearn Bu. 
+Dalam pengerjaan ujian ini saya mengalami kendala masalah yang sangat banyak Bu dalam function nya. saya juga tidak tahu kenapa masalahnya Bu.
+jadi saya mohon agar Ibu dapat memaklumi file ini Bu karena file ini sendiri merupakan copy-an dari laptop yang lain buk bukan dari file aslinya Bu.
+selamat pagi dan terima kasih Bu.
